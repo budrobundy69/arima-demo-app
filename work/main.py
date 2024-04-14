@@ -1,7 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.stattools import adfuller
 
+# ---- MAGIC -----
 # Daten generieren
 data = {
   'Datum': pd.date_range(start='1/1/2020', periods=100),
@@ -9,6 +13,9 @@ data = {
 }
 
 df = pd.DataFrame(data).set_index('Datum')
+df
+print('Shape:', df.shape)
+df.head()
 
 # ARIMA-Modell anpassen
 model = ARIMA(df['Temperatur'], order=(1, 1, 1))
