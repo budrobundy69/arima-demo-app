@@ -8,8 +8,6 @@ Zuerst klonen Sie dieses Repository:
 
 # Temperatur Analyse mit ARIMA
 
-
-
 Installieren Sie dann die erforderlichen Pakete:
 
 ```bash
